@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Kampanye Cyberbullying</title>
+    <title>Home - Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
@@ -93,12 +93,17 @@
             max-width: 100%;
             height: auto;
         }
+        .date-display {
+            color: #fff;
+            font-size: 18px;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="index.html">Kampanye Cyberbullying</a>
+        <a class="navbar-brand" href="index.html">STOP Cyberbullying</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -119,6 +124,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="bantuan.html"><i class="fas fa-hands-helping"></i> Bantuan</a>
                 </li>
+                <li class="nav-item date-display" id="currentDate"></li>
             </ul>
         </div>
     </nav>
@@ -126,7 +132,7 @@
     <div class="container mt-4">
         <!-- Section for Home Page Introduction -->
         <section id="home-intro">
-            <h2 class="text-center">Selamat Datang di Kampanye Cyberbullying</h2>
+            <h2 class="text-center">Selamat Datang di Kampanye STOP Cyberbullying</h2>
             <p class="animate-text text-center">Kami berkomitmen untuk meningkatkan kesadaran tentang cyberbullying dan memberikan sumber daya untuk membantu orang-orang yang terkena dampak. Pelajari lebih lanjut tentang cyberbullying, cara mencegahnya, dampaknya, dan bagaimana mendapatkan bantuan.</p>
             <img src="cy2.png" alt="Cyberbullying Banner" class="img-fluid rounded mx-auto d-block mt-3" data-toggle="modal" data-target="#imageModal" data-src="cy2.png">
         </section>
@@ -219,6 +225,14 @@
             var modal = $(this);
             modal.find('.modal-body #modalImage').attr('src', imageSrc);
         });
+
+        // JavaScript to display the current date
+        function formatDate(date) {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString(undefined, options);
+        }
+
+        document.getElementById('currentDate').textContent = formatDate(new Date());
     </script>
 </body>
 </html>
