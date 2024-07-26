@@ -6,7 +6,94 @@
     <title>Home - Kampanye Cyberbullying</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+        body {
+            background: url('assets/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        .navbar {
+            border-bottom: 4px solid #fff;
+        }
+        .navbar-brand {
+            font-weight: 700;
+        }
+        .navbar-nav .nav-link {
+            font-weight: 500;
+        }
+        .text-center h2 {
+            color: #007bff;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .animate-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .modal-header {
+            border-bottom: none;
+            position: relative;
+        }
+        .modal-header .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0;
+            font-size: 24px;
+            opacity: 0.7;
+        }
+        .modal-header .close:hover {
+            opacity: 1;
+        }
+        .modal-body {
+            text-align: center;
+        }
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -41,11 +128,11 @@
         <section id="home-intro">
             <h2 class="text-center">Selamat Datang di Kampanye Cyberbullying</h2>
             <p class="animate-text text-center">Kami berkomitmen untuk meningkatkan kesadaran tentang cyberbullying dan memberikan sumber daya untuk membantu orang-orang yang terkena dampak. Pelajari lebih lanjut tentang cyberbullying, cara mencegahnya, dampaknya, dan bagaimana mendapatkan bantuan.</p>
-            <img src="cy2.png" alt="Cyberbullying Banner" class="img-fluid rounded mx-auto d-block mt-3">
+            <img src="cy2.png" alt="Cyberbullying Banner" class="img-fluid rounded mx-auto d-block mt-3" data-toggle="modal" data-target="#imageModal" data-src="cy2.png">
         </section>
 
         <!-- Section for Apa itu Cyberbullying? -->
-        <section id="apa-itu-cyberbullying" class="mt-5">
+        <section id="apa-itu-cyberbullying">
             <h3>Apa itu Cyberbullying?</h3>
             <p class="animate-text">Cyberbullying adalah bentuk perilaku agresif dan merendahkan yang terjadi secara daring (online), menggunakan teknologi seperti media sosial, pesan teks, email, atau platform online lainnya untuk melakukan tindakan intimidasi, penghinaan, atau pelecehan terhadap seseorang.</p>
             <p class="animate-text">Contoh dari cyberbullying termasuk:</p>
@@ -54,11 +141,11 @@
                 <li>Penyebaran rumor atau informasi palsu tentang seseorang di media sosial.</li>
                 <li>Penggunaan gambar atau video untuk mengejek atau merendahkan seseorang.</li>
             </ul>
-            <img src="cyberbullying.png" alt="Contoh Cyberbullying" class="img-fluid rounded mt-3">
+            <img src="cyberbullying.png" alt="Contoh Cyberbullying" class="img-fluid rounded mt-3" data-toggle="modal" data-target="#imageModal" data-src="cyberbullying.png">
         </section>
 
         <!-- Section for Cara Mencegah -->
-        <section id="cara-mencegah" class="mt-5">
+        <section id="cara-mencegah">
             <h3>Cara Mencegah Cyberbullying</h3>
             <p class="animate-text">Berikut adalah beberapa cara untuk mencegah cyberbullying:</p>
             <ul class="animate-text">
@@ -68,11 +155,11 @@
                 <li>Menggunakan pengaturan privasi di media sosial untuk melindungi informasi pribadi.</li>
                 <li>Melaporkan tindakan cyberbullying kepada platform atau penyedia layanan yang relevan.</li>
             </ul>
-            <img src="prevent-cyberbullying.jpg" alt="Mencegah Cyberbullying" class="img-fluid rounded mt-3">
+            <img src="cyberbullying.png" alt="Mencegah Cyberbullying" class="img-fluid rounded mt-3" data-toggle="modal" data-target="#imageModal" data-src="cyberbullying.png">
         </section>
 
         <!-- Section for Dampak Cyberbullying -->
-        <section id="dampak-cyberbullying" class="mt-5">
+        <section id="dampak-cyberbullying">
             <h3>Dampak Cyberbullying</h3>
             <p class="animate-text">Cyberbullying dapat memiliki berbagai dampak negatif pada korban, termasuk:</p>
             <ul class="animate-text">
@@ -82,11 +169,11 @@
                 <li>Penurunan prestasi akademis atau performa kerja akibat dampak emosional.</li>
                 <li>Peningkatan risiko penyalahgunaan zat dan perilaku berbahaya lainnya.</li>
             </ul>
-            <img src="cyberbullying-impact.jpg" alt="Dampak Cyberbullying" class="img-fluid rounded mt-3">
+            <img src="cyberbullying.png" alt="Dampak Cyberbullying" class="img-fluid rounded mt-3" data-toggle="modal" data-target="#imageModal" data-src="cyberbullying.png">
         </section>
 
         <!-- Section for Bantuan -->
-        <section id="bantuan" class="mt-5">
+        <section id="bantuan">
             <h3>Bantuan</h3>
             <p class="animate-text">Jika Anda atau seseorang yang Anda kenal mengalami cyberbullying, berikut adalah beberapa langkah yang dapat diambil:</p>
             <ul class="animate-text">
@@ -97,12 +184,41 @@
                 <li>Ikuti program pendidikan dan pelatihan tentang cara melindungi diri dari cyberbullying.</li>
             </ul>
             <p class="animate-text">Jangan ragu untuk melaporkan setiap insiden cyberbullying yang Anda alami. Tindakan cepat dapat membantu melindungi Anda dan mencegah hal yang lebih buruk terjadi.</p>
-            <img src="help-resources.jpg" alt="Sumber Bantuan" class="img-fluid rounded mt-3">
+            <img src="cyberbullying.png" alt="Sumber Bantuan" class="img-fluid rounded mt-3" data-toggle="modal" data-target="#imageModal" data-src="cyberbullying.png">
         </section>
     </div>
 
+    <!-- Modal for Image -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Gambar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Modal Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Kampanye Cyberbullying. All rights reserved.</p>
+    </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // jQuery script to update the modal image source
+        $('#imageModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var imageSrc = button.data('src'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('.modal-body #modalImage').attr('src', imageSrc);
+        });
+    </script>
 </body>
 </html>
